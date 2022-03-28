@@ -1,0 +1,32 @@
+<section class="page-section" id="all-pools">
+  <div class="container">
+    <span style="color: green"><%= notice %></span>
+
+    <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">All Pools</h2>
+    <div class="divider-custom">
+      <div class="divider-custom-line"></div>
+      <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+      <div class="divider-custom-line"></div>
+    </div>
+
+    <table class="table table-hover table-bordered">
+      <thead class="table-dark text-center">
+        <tr class="lead">
+          <td>Project</td>
+          <td>Round</td>
+          <td>Platform</td>
+          <td>Amount, $</td>
+          <td>Price, $</td>
+          <td>Vesting Schedule</td>
+          <td>Launch on</td>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @pools %>
+      </tbody>
+    </table>
+    <div>
+      <%= link_to "New Pool", new_pool_path, class:"btn btn-primary" %>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  project: MyString
+  round: MyString
+  platform: MyString
+  amount: 9.99
+  price: 9.99
+  vesting: MyText
+  launchdate: 2022-03-27
+  profit: 9.99
+
+two:
+  project: MyString
+  round: MyString
+  platform: MyString
+  amount: 9.99
+  price: 9.99
+  vesting: MyText
+  launchdate: 2022-03-27
+  profit: 9.99
