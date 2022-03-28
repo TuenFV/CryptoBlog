@@ -19,8 +19,11 @@
     <%= render 'home/navbar' %>
     <br/><br/>
 
-    <%= yield %>
-
+    <section class="page-section">
+      <p><%= notice %></p>
+      <p><%= alert %></p>
+      <%= yield %>
+    </section>
     <%= render 'home/footer' %>
     <%= render 'home/copyright' %>
   </body>

@@ -1,5 +1,6 @@
 class PoolsController < ApplicationController
   before_action :set_pool, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   # GET /pools or /pools.json
   def index
