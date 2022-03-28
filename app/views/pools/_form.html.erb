@@ -1,0 +1,58 @@
+<div class="row justify-content-center">
+  <div class="col-lg-8 col-xl-7">
+    <%= form_with(model: pool) do |form| %>
+      <% if pool.errors.any? %>
+        <div style="color: red">
+          <h2><%= pluralize(pool.errors.count, "error") %> prohibited this pool from being saved:</h2>
+
+          <ul>
+            <% pool.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="form-floating">
+        <%= form.text_field :project, class:"form-control", placeholder:"Project" %>
+        <%= form.label :project, "Project" %>
+      </div>
+
+      <div class="form-floating">
+        <%= form.text_field :round, class:"form-control", placeholder:"Select the round" %>
+        <%= form.label :round, "Round" %>
+      </div>
+
+      <div class="form-floating">
+        <%= form.text_field :platform, class:"form-control", placeholder:"Round" %>
+        <%= form.label :platform, "Platform" %>
+      </div>
+
+      <div class="form-floating">
+        <%= form.text_field :amount, class:"form-control", placeholder:"Your fund" %>
+        <%= form.label :amount, "Your Amount" %>
+      </div>
+
+      <div class="form-floating">
+        <%= form.text_field :price, class:"form-control", placeholder:"Token price" %>
+        <%= form.label :price, "Token Price" %>
+      </div>
+
+      <div class="form-floating">
+        <%= form.text_area :vesting, class:"form-control", placeholder:"Vesting time" %>
+        <%= form.label :vesting, "Vesting Schedule:" %>
+      </div>
+
+      <div class="form-floating">
+        <%= form.date_field :launchdate, class:"form-control", placeholder:"Date launch" %>
+        <%= form.label :launchdate, "Launch Date:" %>
+      </div>
+
+      <div>
+        <br/>
+        <%= form.submit "Confirm", class:"btn btn-primary" %>
+        <%= link_to "Cancel", pools_path, class: "btn btn-secondary" %>
+      </div>
+    <% end %>
+  </div>
+</div>
