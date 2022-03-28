@@ -13,8 +13,8 @@
     <div>
       <i class="fa-solid fa-flag fa-3x"></i>
       <div><br/></div>
+      <p class="mb-1">Round</p>
       <h6><%= @pool.round %></h6>
-      <p>Round</p>
     </div>
   </div>
 
@@ -22,8 +22,8 @@
     <div>
       <i class="fa fa-rocket fa-3x"></i>
       <div><br/></div>
+      <p class="mb-1">Platform</p>
       <h6><%= @pool.platform %></h6>
-      <p>Platform</p>
     </div>
   </div>
 
@@ -31,8 +31,8 @@
     <div>
       <i class="fa-solid fa-sack-dollar fa-3x"></i>
       <div><br/></div>
+      <p class="mb-1">Amount</p>
       <h6><%= number_to_currency(@pool.amount, precision: 0) unless @pool.amount.nil? %></h6>
-      <p>Amount</p>
     </div>
   </div>
 
@@ -40,8 +40,8 @@
     <div>
       <i class="fa-solid fa-circle-dollar-to-slot fa-3x"></i>
       <div><br/></div>
+      <p class="mb-1">Token Price</p>
       <h6>$<%= @pool.price %></h6>
-      <p>Token Price</p>
     </div>
   </div>
 
@@ -49,13 +49,13 @@
     <div>
       <i class="fa-regular fa-calendar-check fa-3x"></i>
       <div><br/></div>
+      <p class="mb-1">Launch Date</p>
       <h6><%= @pool.launchdate.nil? ? "Updating..." : @pool.launchdate.strftime('%d/%m/%Y') %></h6>
-      <p>Launch Date</p>
     </div>
   </div>
 </div>
 
-<br/><br/><br/>
+<br/><br/>
 <div class="text-center">
   <h5>
     <i class="fa-solid fa-bell fa-1x"></i>
