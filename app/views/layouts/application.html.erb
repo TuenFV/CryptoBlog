@@ -20,9 +20,11 @@
     <br/><br/>
 
     <section class="page-section">
-      <p><%= notice %></p>
-      <p><%= alert %></p>
-      <%= yield %>
+      <div class="container">
+        <p><%= notice %></p>
+        <p><%= alert %></p>
+        <%= yield %>
+      </div>
     </section>
     <%= render 'home/footer' %>
     <%= render 'home/copyright' %>
