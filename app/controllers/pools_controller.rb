@@ -1,10 +1,11 @@
 class PoolsController < ApplicationController
   before_action :set_pool, only: %i[ show edit update destroy ]
   before_action :authenticate_user!
+  before_action :correct_user, only: %i[ show edit update destroy ]
 
   # GET /pools or /pools.json
   def index
-    @pools = Pool.all
+    @pools = current_user.pools.all
   end
 
   # GET /pools/1 or /pools/1.json
@@ -13,7 +14,8 @@ class PoolsController < ApplicationController
 
   # GET /pools/new
   def new
-    @pool = Pool.new
+    #pool = Pool.new
+    @pool = current_user.pools.build()
   end
 
   # GET /pools/1/edit
@@ -22,7 +24,8 @@ class PoolsController < ApplicationController
 
   # POST /pools or /pools.json
   def create
-    @pool = Pool.new(pool_params)
+    #@pool = Pool.new(pool_params)
+    @pool = current_user.pools.build(pool_params)
 
     respond_to do |format|
       if @pool.save
@@ -58,14 +61,23 @@ class PoolsController < ApplicationController
     end
   end
 
+  def correct_user
+    @pool = current_user.pools.find_by(id: params[:id])
+    redirect_to pools_path if @pool.nil?
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_pool
-      @pool = Pool.find(params[:id])
+      begin
+        @pool = current_user.pools.find(params[:id])
+      rescue
+        redirect_to pools_path
+      end
     end
 
     # Only allow a list of trusted parameters through.
     def pool_params
-      params.require(:pool).permit(:project, :round, :platform, :amount, :price, :vesting, :launchdate, :profit)
+      params.require(:pool).permit(:project, :round, :platform, :amount, :price, :vesting, :launchdate, :profit, :user_id)
     end
 end
