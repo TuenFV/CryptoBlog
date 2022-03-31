@@ -41,11 +41,11 @@
       <div class="form-floating">
         <%= form.text_area :vesting, class:"form-control", placeholder:"Vesting time" %>
         <%= form.label :vesting, "Vesting Schedule:" %>
-      </div>
+      </div><br/>
 
-      <div class="form-floating">
-        <%= form.date_field :launchdate, class:"form-control", placeholder:"Date launch" %>
-        <%= form.label :launchdate, "Launch Date:" %>
+      <div>
+        <%= form.label :launchdate, "Launch Date:", style:"color: #6c757d; font-size:1.5rem;" %>
+        <%= form.date_select :launchdate %>
       </div>
 
       <div>

@@ -1,0 +1,39 @@
+<%= form_with(model: vesting, url: [@pool, vesting]) do |form| %>
+  <% if vesting.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(vesting.errors.count, "error") %> prohibited this vesting from being saved:</h2>
+
+      <ul>
+        <% vesting.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <% if params[:action] == "edit" %> <!--Only display when edit vesting-->
+    <div class="form-floating">
+      <%= form.number_field :soldtoken, class:"form-control", placeholder:"Token sold" %>
+      <%= form.label "Token Sold" %>
+    </div><br>
+    <div class="form-floating">
+      <%= form.number_field :return, class:"form-control", placeholder:"Recieve, $" %>
+      <%= form.label "Recieve, $" %>
+    </div><br>
+  <% end %>
+
+  <div>
+    <%= form.label "Vesting date: ", style:"color: #6c757d; font-size:1.5rem;" %>
+    <%= form.date_select :date %>
+  </div>
+
+  <div class="form-floating">
+    <%= form.text_field :rate, class:"form-control", placeholder:"Rate, %" %>
+    <%= form.label "Rate, %" %>
+  </div><br>
+
+  <div>
+    <%= form.submit "OK", class:"btn btn-primary" %>
+    <%= link_to "Cancel", pool_vestings_path(@pool), class:" btn btn-secondary" %>
+  </div>
+<% end %>
