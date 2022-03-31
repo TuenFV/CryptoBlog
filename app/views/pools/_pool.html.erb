@@ -5,7 +5,7 @@
     <td><%= pool.platform %></td>
     <td><%= number_to_currency(pool.amount, precision: 0) unless pool.amount.nil? %></td>
     <td><%= pool.price %></td>
-    <td class="text-start"><%= pool.vesting %></td>
+    <td class="text-start"><%= link_to pool.vesting, pool_vestings_path(pool) %></td>
     <td><%= pool.launchdate.nil? ? "Updating..." : pool.launchdate.strftime('%d/%m/%Y') %></td>
   </tr>
 </div>

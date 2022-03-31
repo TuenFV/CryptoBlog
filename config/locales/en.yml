@@ -31,3 +31,11 @@
 
 en:
   hello: "Hello world"
+
+  date:
+    formats:
+      default: "%d/%m/%Y"
+    order:
+      - :day
+      - :month
+      - :year

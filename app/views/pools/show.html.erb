@@ -8,7 +8,7 @@
   <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
   <div class="divider-custom-line"></div>
 </div>
-<div class="row row-cols-5">
+<div class="row rows-col-5">
   <div class="text-center col">
     <div>
       <i class="fa-solid fa-flag fa-3x"></i>
@@ -59,7 +59,7 @@
 <div class="text-center">
   <h5>
     <i class="fa-solid fa-bell fa-1x"></i>
-    <span>Vesting Schedule: <%= @pool.vesting %></span>
+    <span><%= link_to "Vesting Schedule:", pool_vestings_path(@pool) %> <%= @pool.vesting %></span>
   </h5>
 </div>
 <br/><br/>

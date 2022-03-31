@@ -1,0 +1,17 @@
+<div class="masthead-heading text-center text-uppercase text-secondary mb-0">
+  <h2><%= @pool.project %></h2>
+  <h5>Update vesting</h5>
+</div>
+<div class="divider-custom">
+  <div class="divider-custom-line"></div>
+  <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+  <div class="divider-custom-line"></div>
+</div>
+
+<%= render "form", vesting: @vesting %>
+
+<br/>
+
+<div>
+  <%= link_to "Delete this vesting", [@pool, @vesting], method: :delete, data: { confirm: 'Are you sure?', class: "btn btn-danger" } %>
+</div>
