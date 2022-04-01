@@ -2,6 +2,12 @@ class UserMailer < ApplicationMailer
   include Devise::Controllers::UrlHelpers
   default from: "tuyen-user@gmail.com"
 
+  def remind_vesting_date
+    @user = params[:user]
+    @url = "http://localhost:3000/pools"
+    mail(to: @user.email, subject: "New vesting coming tomorrow!")
+  end
+
   def notify_new_vesting
     @user = params[:user]
     @url = "http://localhost:3000/"
