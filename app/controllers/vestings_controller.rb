@@ -39,6 +39,7 @@ class VestingsController < ApplicationController
       if @vesting.update(vesting_params)
         UserMailer.with(user: current_user).remind_vesting_date.deliver_later(wait: 2.seconds)
         format.html { redirect_to pool_vestings_path, notice: "Vesting was successfully updated." }
+
         format.json { render :show, status: :ok, location: @vesting }
       else
         format.html { render :edit, status: :unprocessable_entity }
