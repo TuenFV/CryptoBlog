@@ -1,7 +1,7 @@
 <div id="<%= dom_id vesting %>">
   <tr class="text-center">
     <th><%= link_to "Vesting #{@k}", edit_pool_vesting_path(@pool, vesting) %></th>
-    <td><%= vesting.date %></td>
+    <td><%= vesting.date.strftime('%d/%m/%Y') %></td>
     <td><%= number_to_percentage(vesting.rate, precision: 0) unless vesting.rate.nil? %></td>
     <td><%= vesting.soldtoken %></td>
     <td><%= number_to_currency(vesting.return, precision: 0) unless vesting.return.nil? %></td>

@@ -5,7 +5,7 @@ class PoolsController < ApplicationController
 
   # GET /pools or /pools.json
   def index
-    @pools = current_user.pools.all
+    @pools = current_user.pools.sort.reverse!
   end
 
   # GET /pools/1 or /pools/1.json
@@ -29,6 +29,8 @@ class PoolsController < ApplicationController
 
     respond_to do |format|
       if @pool.save
+        UserMailer.with(user: current_user).notify_new_pool.deliver_now
+
         format.html { redirect_to pool_url(@pool), notice: "Pool was successfully created." }
         format.json { render :show, status: :created, location: @pool }
       else
