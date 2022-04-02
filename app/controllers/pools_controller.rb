@@ -29,8 +29,6 @@ class PoolsController < ApplicationController
 
     respond_to do |format|
       if @pool.save
-        UserMailer.with(user: current_user).notify_new_pool.deliver_now
-
         format.html { redirect_to pool_url(@pool), notice: "Pool was successfully created." }
         format.json { render :show, status: :created, location: @pool }
       else

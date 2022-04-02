@@ -4,19 +4,22 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Hello <%= @user.email.split("@")[0].capitalize! %>,</h1>
+    <h3>Dear <%= @user.email.split("@")[0].capitalize! %>,</h3>
     <p>
-      You will have a vesting of <strong>Project pool.project</strong> on <strong>pool.platform</strong> tomorrow.
+      You will have a new vesting of <strong><%= @pool.project %></strong> on <strong><%= @pool.platform %></strong> tomorrow.
     </p>
-    <h3>
+    <h4>
       Do not forget to claim your tokens.
-    </h3>
+    </h4>
     <p>
-      You can update your result <%= link_to "here.", @url %>
+      Click <%= link_to "here", @url %> to update your result.<br/>
+      We hope you have a sucessful investment.
     </p>
     <p>
-    Hope you have a sucessful investment!
+      <i>
+      Regards,<br/>
+      MyInvests Team!
+    </i>
     </p>
-    <p>We love to be with you!</p>
   </body>
 </html>
