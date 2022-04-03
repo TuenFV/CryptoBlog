@@ -22,8 +22,6 @@ class VestingsController < ApplicationController
 
     respond_to do |format|
       if @vesting.save
-        #UserMailer.with(user: current_user).notify_new_vesting.deliver_later(wait: 1.seconds)
-        #((@vesting.date - Date.current).to_i - 1).days
         format.html { redirect_to pool_vestings_path notice: "Vesting was successfully created." }
         format.json { render :show, status: :created, location: @vesting }
       else
@@ -37,7 +35,6 @@ class VestingsController < ApplicationController
   def update
     respond_to do |format|
       if @vesting.update(vesting_params)
-        #UserMailer.with(user: current_user).remind_vesting_date.deliver_later(wait: 2.seconds)
         format.html { redirect_to pool_vestings_path, notice: "Vesting was successfully updated." }
         format.json { render :show, status: :ok, location: @vesting }
       else

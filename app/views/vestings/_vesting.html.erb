@@ -8,7 +8,8 @@
       <%= vesting.date.strftime('%d/%m/%Y') %></s>
     </td>
     <td><%= number_to_percentage(vesting.rate, precision: 0) unless vesting.rate.nil? %></td>
+    <td><%= token_recieve(vesting) %></td>
     <td><%= vesting.soldtoken.round(0) unless vesting.soldtoken.nil? %></td>
-    <td><%= number_to_currency(vesting.return, precision: 0) unless vesting.return.nil? %></td>
+    <td><%= vesting.return.round(0) unless vesting.return.nil? %></td>
   </tr>
 </div>
