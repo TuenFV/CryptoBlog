@@ -2,8 +2,8 @@
   <div class="col-lg-8 col-xl-7">
     <%= form_with(model: pool) do |form| %>
       <% if pool.errors.any? %>
-        <div style="color: red">
-          <h2><%= pluralize(pool.errors.count, "error") %> prohibited this pool from being saved:</h2>
+        <div style="color: red" class="mb-2">
+          <h5><%= pluralize(pool.errors.count, "error") %> prohibited this pool from being saved:</h5>
 
           <ul>
             <% pool.errors.each do |error| %>
@@ -29,12 +29,12 @@
       </div>
 
       <div class="form-floating">
-        <%= form.text_field :amount, class:"form-control", placeholder:"Your fund" %>
+        <%= form.number_field :amount, class:"form-control", placeholder:"Your fund" %>
         <%= form.label :amount, "Your Amount" %>
       </div>
 
       <div class="form-floating">
-        <%= form.text_field :price, class:"form-control", placeholder:"Token price" %>
+        <%= form.number_field :price, step: :any, class:"form-control", placeholder:"Token price" %>
         <%= form.label :price, "Token Price" %>
       </div>
 

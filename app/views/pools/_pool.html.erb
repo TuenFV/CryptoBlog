@@ -5,7 +5,7 @@
     <td><%= pool.platform %></td>
     <td><%= pool.amount.round(0) unless pool.amount.nil? %></td>
     <td><%= pool.price %></td>
-    
+
     <% if pool_profit(pool) == 0 %>
       <td>-</td>
       <% elsif pool_profit(pool) < 0 %>
