@@ -8,7 +8,6 @@ class CreatePools < ActiveRecord::Migration[7.0]
       t.decimal :price
       t.text :vesting
       t.date :launchdate
-      t.decimal :profit
 
       t.timestamps
     end

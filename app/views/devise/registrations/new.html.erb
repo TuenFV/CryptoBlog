@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mb-4">
 
   <h2 class="masthead-heading text-center text-uppercase text-secondary mb-0">Join with us</h2>
   <div class="divider-custom">
@@ -16,13 +16,13 @@
       </div>
 
       <div class="field form-floating">
-        <%= f.password_field :password, autocomplete: "new-password", class:"form-control", placeholder:"Password*" %>
+        <%= f.password_field :password, autocomplete: "off", class:"form-control", placeholder:"Password*" %>
         <%= f.label :password, "Password*" %>
       </div>
 
       <div class="field form-floating">
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control", placeholder:"Password confirmation" %>
-        <%= f.label :password_confirmation, "Confirm Password" %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control", placeholder:"Password confirmation" %>
+        <%= f.label :password_confirmation %><br />
       </div>
       <p class="float-start">
         <% if @minimum_password_length %>

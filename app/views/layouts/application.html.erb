@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Welcome to My Blog</title>
+    <title>Welcome to My Invests</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -15,17 +15,15 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
   </head>
 
-  <body id="page-top">
+  <body>
     <%= render 'home/navbar' %>
-    <br/><br/>
+    <br/><br/><br/><br/><br/>
+    <div class="container">
+      <%= render 'layouts/flash' %>
+    </div>
 
-    <section class="page-section">
-      <div class="container">
-        <p><%= notice %></p>
-        <p><%= alert %></p>
-        <%= yield %>
-      </div>
-    </section>
+    <%= yield %>
+
     <%= render 'home/footer' %>
     <%= render 'home/copyright' %>
   </body>

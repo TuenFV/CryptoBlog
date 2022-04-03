@@ -1,6 +1,4 @@
-<div class="container">
-  <span style="color: green"><%= notice %></span>
-
+<div class="container mb-4">
   <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">My Pools</h2>
   <div class="divider-custom">
     <div class="divider-custom-line"></div>
@@ -14,8 +12,9 @@
         <th>Project</th>
         <th>Round</th>
         <th>Platform</th>
-        <th>Amount</th>
+        <th>Amount, $</th>
         <th>Price, $</th>
+        <th>Profit, $</th>
         <th>Vesting Schedule</th>
         <th>Launch Date</th>
       </tr>
@@ -24,9 +23,8 @@
       <%= render @pools %>
     </tbody>
   </table>
-
-  <div class="ms-3">
-    <%= link_to "Add Project", new_pool_path, class:"btn btn-sm btn-primary" %>
+  <div class="ms-2">
+    <%= link_to "New Project", new_pool_path, class:"btn btn-sm btn-primary" %>
   </div>
 </div>
 
