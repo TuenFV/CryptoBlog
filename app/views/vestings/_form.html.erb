@@ -9,8 +9,6 @@
       </ul>
     </div>
   <% end %>
-
-
   <% if params[:action] == "edit" || params[:action] == "update" %> <!--Only display when edit vesting-->
     <div class="form-floating">
       <%= form.number_field :soldtoken, class:"form-control", placeholder:"Token sold" %>

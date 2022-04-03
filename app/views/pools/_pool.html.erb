@@ -13,7 +13,7 @@
     <% else %>
       <td style="color: blue;"><b><%= pool_profit(pool) %></b></td>
     <% end %>
-
+    
     <td class="text-start"><%= link_to pool.vesting, pool_vestings_path(pool) %></td>
     <td><%= pool.launchdate.nil? ? "Updating..." : pool.launchdate.strftime('%d/%m/%Y') %></td>
   </tr>
