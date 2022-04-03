@@ -22,7 +22,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_30_033606) do
     t.decimal "price"
     t.text "vesting"
     t.date "launchdate"
-    t.decimal "profit"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"

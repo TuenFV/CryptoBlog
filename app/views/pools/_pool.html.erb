@@ -5,6 +5,12 @@
     <td><%= pool.platform %></td>
     <td><%= number_to_currency(pool.amount, precision: 0) unless pool.amount.nil? %></td>
     <td><%= pool.price %></td>
+    <% if pool_profit(pool) < 0 %>
+      <td style="color: red;">
+    <% else %>
+      <td>
+    <% end %>
+        <%= number_to_currency(pool_profit(pool), precision: 0) unless pool_profit(pool).nil? %></td>
     <td class="text-start"><%= link_to pool.vesting, pool_vestings_path(pool) %></td>
     <td><%= pool.launchdate.nil? ? "Updating..." : pool.launchdate.strftime('%d/%m/%Y') %></td>
   </tr>

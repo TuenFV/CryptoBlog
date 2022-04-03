@@ -6,7 +6,7 @@ class UserMailer < ApplicationMailer
     @user = params[:user]
     @pool = params[:pool]
     @vesting = params[:vesting]
-    @url = "http://localhost:3000/pools/#{@pool.id}/vestings/#{@vesting.id}/edit"
+    @url = "https://my-invests.herokuapp.com/pools/#{@pool.id}/vestings/#{@vesting.id}/edit"
     mail(to: @user.email, subject: "[New Vesting] #{@pool.project} Tomorrow!")
   end
 

@@ -11,7 +11,7 @@
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <div class="form-floating">
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
+      <%= f.email_field :email, autofocus: true, class:"form-control" %>
       <%= f.label :email %><br />
     </div>
 
@@ -34,8 +34,8 @@
       <%= f.label :current_password %><i>(Input current password to confirm your changes)</i><br/>
     </div>
     <div class="actions mt-3">
-      <%= f.submit "Update", class:"btn btn-primary rounded px-5 text-uppercase" %>
-      <%= link_to "Cancel", :back, class:"btn btn-secondary rounded px-5 text-uppercase" %>
+      <%= f.submit "Update", class:"btn btn-sm btn-primary rounded px-5 text-uppercase" %>
+      <%= link_to "Cancel", :back, class:"btn btn-sm btn-secondary rounded px-5 text-uppercase" %>
     </div>
   <% end %>
 
