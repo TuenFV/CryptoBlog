@@ -1,7 +1,7 @@
 <%= form_with(model: vesting, url: [@pool, vesting]) do |form| %>
   <% if vesting.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(vesting.errors.count, "error") %> prohibited this vesting from being saved:</h2>
+    <div style="color: red" class="mb-2">
+      <h5><%= pluralize(vesting.errors.count, "error") %> prohibited this vesting from being saved:</h5>
 
       <ul>
         <% vesting.errors.each do |error| %>
@@ -11,13 +11,13 @@
     </div>
   <% end %>
 
-  <% if params[:action] == "edit" %> <!--Only display when edit vesting-->
+  <% if params[:action] == "edit" || params[:action] == "update" %> <!--Only display when edit vesting-->
     <div class="form-floating">
       <%= form.number_field :soldtoken, class:"form-control", placeholder:"Token sold" %>
       <%= form.label "Token Sold" %>
     </div><br>
     <div class="form-floating">
-      <%= form.number_field :return, class:"form-control", placeholder:"Recieve, $" %>
+      <%= form.number_field :return, step: :any, class:"form-control", placeholder:"Recieve, $" %>
       <%= form.label "Recieve, $" %>
     </div><br>
   <% end %>
@@ -28,7 +28,7 @@
   </div>
 
   <div class="form-floating">
-    <%= form.text_field :rate, class:"form-control", placeholder:"Rate, %" %>
+    <%= form.number_field :rate, step: :any, class:"form-control", placeholder:"Rate, %" %>
     <%= form.label "Rate, %" %>
   </div><br>
 
