@@ -1,0 +1,42 @@
+<div class="container mb-4">
+
+  <h2 class="masthead-heading text-center text-uppercase text-secondary mb-0">Join with us</h2>
+  <div class="divider-custom">
+    <div class="divider-custom-line"></div>
+    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+    <div class="divider-custom-line"></div>
+  </div>
+  <div class="card-body p-1 text-center w-50 mx-auto">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="field form-floating">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder:"Email" %>
+        <%= f.label :email %><br />
+      </div>
+
+      <div class="field form-floating">
+        <%= f.password_field :password, autocomplete: "off", class:"form-control", placeholder:"Password*" %>
+        <%= f.label :password, "Password*" %>
+      </div>
+
+      <div class="field form-floating">
+        <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control", placeholder:"Password confirmation" %>
+        <%= f.label :password_confirmation %><br />
+      </div>
+      <p class="float-start">
+        <% if @minimum_password_length %>
+        <span class="text-start" style="font-size: 0.8rem;">*Required minimum &nbsp;<%= @minimum_password_length %> characters.</p></span>
+        <% end %><br/>
+      </p>
+
+      <div class="actions">
+        <%= f.submit "Sign up", class:"btn btn-secondary rounded px-5 text-uppercase" %>
+      </div>
+    <% end %><br/>
+    <p class="mb-0 text-start">
+      Or you already have an account?&nbsp;
+      <strong><%= link_to " Log-in here", new_user_session_path %></strong>
+    </p>
+  </div>
+</div>

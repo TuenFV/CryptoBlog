@@ -1,0 +1,12 @@
+Dear <%= @user.email.split("@")[0].capitalize! %>
+===============================================
+
+You will have a new vesting of <%= @pool.project %> on <%= @pool.platform %> tomorrow.
+
+Do not forget to claim your tokens.
+
+Click <%= link_to "here", @url %> to update your result.
+We hope you have a sucessful investment!
+
+Best Regards,
+MyInvest.com Team

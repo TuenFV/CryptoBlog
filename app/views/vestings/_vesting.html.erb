@@ -1,0 +1,15 @@
+<div id="<%= dom_id vesting %>">
+  <tr class="text-center">
+    <th><%= link_to "Vesting #{@k}", edit_pool_vesting_path(@pool, vesting) %></th>
+    <td>
+      <% if vesting.date < Date.current %>
+        <s>
+      <% end %>
+      <%= vesting.date.strftime('%d/%m/%Y') %></s>
+    </td>
+    <td><%= vesting.rate.round(2) unless vesting.rate.nil? %> %</td>
+    <td><%= token_recieve(vesting) %></td>
+    <td><%= vesting.soldtoken.round(0) unless vesting.soldtoken.nil? %></td>
+    <td><%= vesting.return.round(0) unless vesting.return.nil? %></td>
+  </tr>
+</div>

@@ -1,0 +1,68 @@
+<h2 class="masthead-heading text-center text-uppercase text-secondary mb-0"><%= @pool.project %></h2>
+<div class="divider-custom">
+  <div class="divider-custom-line"></div>
+  <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+  <div class="divider-custom-line"></div>
+</div>
+<div class="row justify-content-center">
+  <div class="col-md-6 col-lg-4 mb-4">
+    <div class="text-center">
+      <i class="fa-solid fa-flag fa-3x"></i>
+      <p class="mb-1">Round</p>
+      <h6><%= @pool.round %></h6>
+    </div>
+  </div>
+
+  <div class="col-md-6 col-lg-4 mb-4">
+    <div class="text-center">
+      <i class="fa fa-rocket fa-3x"></i>
+      <p class="mb-1">Platform</p>
+      <h6><%= @pool.platform %></h6>
+    </div>
+  </div>
+
+  <div class="col-md-6 col-lg-4 mb-4">
+    <div class="text-center">
+      <i class="fa-solid fa-handshake-simple fa-3x"></i>
+      <p class="mb-1">Amount</p>
+      <h6><%= number_to_currency(@pool.amount, precision: 0) unless @pool.amount.nil? %></h6>
+    </div>
+  </div>
+
+  <div class="col-md-6 col-lg-4 mb-4">
+    <div class="text-center">
+      <i class="fa-solid fa-circle-dollar-to-slot fa-3x"></i>
+      <p class="mb-1">Token Price</p>
+      <h6>$<%= @pool.price %></h6>
+    </div>
+  </div>
+
+  <div class="col-md-6 col-lg-4 mb-4">
+    <div class="text-center">
+      <i class="fa-regular fa-calendar-check fa-3x"></i>
+      <p class="mb-1">Launch Date</p>
+      <h6><%= @pool.launchdate.nil? ? "Updating..." : @pool.launchdate.strftime('%d/%m/%Y') %></h6>
+    </div>
+  </div>
+
+  <div class="col-md-6 col-lg-4 mb-4">
+    <div class="text-center">
+      <i class="fa-solid fa-sack-dollar fa-3x"></i>
+      <p class="mb-1">Profit</p>
+      <h6>$<%= pool_profit(@pool) %></h6>
+    </div>
+  </div>
+</div>
+
+<br/>
+<div class="text-center">
+  <h5>
+    <i class="fa-solid fa-bell fa-1x"></i>
+    <span><%= link_to "Vesting Schedule:", pool_vestings_path(@pool) %> <%= @pool.vesting %></span>
+  </h5>
+</div>
+<br/>
+<h5 class="text-center">
+<%= link_to "Update", edit_pool_path(@pool), class:"btn btn-sm btn-primary" %>
+<%= link_to "Back", pools_path, class:"btn btn-sm btn-secondary" %>
+</h5><br/>

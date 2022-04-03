@@ -1,0 +1,46 @@
+<div class="container">
+
+  <h2 class="masthead-heading text-center text-uppercase text-secondary mb-0">Edit <%= resource_name.to_s.humanize %></h2>
+  <div class="divider-custom">
+    <div class="divider-custom-line"></div>
+    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+    <div class="divider-custom-line"></div>
+  </div>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="form-floating">
+      <%= f.email_field :email, autofocus: true, class:"form-control" %>
+      <%= f.label :email %><br />
+    </div>
+
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <% end %>
+
+    <div class="form-floating">
+      <%= f.password_field :password, autocomplete: "new-password", class:"form-control" %>
+      <%= f.label :password, "New password" %><i>(Leave blank if you don't want to change it)</i><br/>
+    </div>
+
+    <div class="form-floating">
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control" %>
+      <%= f.label :password_confirmation, "Confirm new password" %><br />
+    </div>
+
+    <div class="form-floating">
+      <%= f.password_field :current_password, autocomplete: "current-password", class:"form-control" %>
+      <%= f.label :current_password %><i>(Input current password to confirm your changes)</i><br/>
+    </div>
+    <div class="actions mt-3">
+      <%= f.submit "Update", class:"btn btn-sm btn-primary rounded px-5 text-uppercase" %>
+      <%= link_to "Cancel", :back, class:"btn btn-sm btn-secondary rounded px-5 text-uppercase" %>
+    </div>
+  <% end %>
+
+  <div class="mt-4">
+    <p>Unhappy?
+    <%= link_to "Delete my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+  </div>
+</div>

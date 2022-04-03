@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h3>Dear <%= @user.email.split("@")[0].capitalize! %>,</h3>
+    <p>
+      You will have a new vesting of <strong><%= @pool.project %></strong> on <strong><%= @pool.platform %></strong> tomorrow.
+    </p>
+    <h4>
+      Do not forget to claim your tokens.
+    </h4>
+    <p>
+      Click <%= link_to "here", @url %> to update your result.<br/>
+      We hope you have a sucessful investment.
+    </p>
+    <p>
+      <i>
+      Regards,<br/>
+      MyInvests Team!
+    </i>
+    </p>
+  </body>
+</html>

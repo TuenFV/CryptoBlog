@@ -1,0 +1,37 @@
+<div class="container mb-4">
+  <div class="masthead-heading text-center text-uppercase text-secondary mb-0">
+    <h2>Vesting Schedule</h2>
+    <h4><%= @pool.project %></h4>
+  </div>
+  <div class="divider-custom mb-2">
+    <div class="divider-custom-line"></div>
+    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+    <div class="divider-custom-line"></div>
+  </div>
+  <h5 class="text-center"><%= @pool.vesting %></h5>
+
+  <table class="table table-hover table-bordered">
+    <thead class="table-dark text-center">
+      <tr>
+        <th>Vesting</th>
+        <th>Date</th>
+        <th>Rate</th>
+        <th>Recieve Token</th>
+        <th>Sold Token</th>
+        <th>Recieve, $</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @k = 1 %>
+      <% @vestings.sort_by(&:date).each do |vesting| %>
+        <%= render vesting %>
+        <% @k += 1 %>
+    <% end %>
+    </tbody>
+  </table>
+
+  <div>
+    <%= link_to "New Vesting", new_pool_vesting_path(@pool), class:"btn btn-sm btn-primary" %>
+    <%= link_to "Back", pools_path, class:"btn btn-sm btn-secondary" %>
+  </div>
+</div>
