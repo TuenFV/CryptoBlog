@@ -5,6 +5,7 @@
     <td><%= pool.platform %></td>
     <td><%= pool.amount.round(0) unless pool.amount.nil? %></td>
     <td><%= pool.price %></td>
+
     <% if pool_profit(pool) == 0 %>
       <td>-</td>
       <% elsif pool_profit(pool) < 0 %>
@@ -12,6 +13,7 @@
     <% else %>
       <td style="color: blue;"><b><%= pool_profit(pool) %></b></td>
     <% end %>
+
     <td class="text-start"><%= link_to pool.vesting, pool_vestings_path(pool) %></td>
     <td><%= pool.launchdate.nil? ? "Updating..." : pool.launchdate.strftime('%d/%m/%Y') %></td>
   </tr>
