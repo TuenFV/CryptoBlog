@@ -9,7 +9,7 @@
     <% if pool_profit(pool) == 0 %>
       <td>-</td>
       <% elsif pool_profit(pool) < 0 %>
-      <td style="color: red;"><% pool_profit(pool) %></td>
+      <td style="color: red;"><%pool_profit(pool) %></td>
     <% else %>
       <td style="color: blue;"><b><%= pool_profit(pool) %></b></td>
     <% end %>

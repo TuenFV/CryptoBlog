@@ -1,33 +1,46 @@
-<!-- Footer-->
-<footer class="footer text-center">
-  <div class="container">
+<footer class="text-center text-lg-start text-white mt-auto"
+        style="background-color: #2c3e50">
+  <div class="p-3 pb-0">
     <div class="row">
-        <!-- Footer Location-->
-        <div class="col-lg-4 mb-3 mb-lg-0">
-            <h5 class="text-uppercase mb-2">Your Invests</h5>
-            <p>Keep going...</p>
-        </div>
-        <!-- Footer Social Icons-->
-        <div class="col-lg-4 mb-3 mb-lg-0">
-            <h5 class="text-uppercase mb-3">My Social</h5>
-            <a class="btn btn-outline-light btn-social mx-1" href="https://facebook.com/loki9x"><i class="fab fa-fw fa-facebook-f"></i></a>
-            <a class="btn btn-outline-light btn-social mx-1" href="https://twitter.com/TuenFV"><i class="fab fa-fw fa-twitter"></i></a>
-            <a class="btn btn-outline-light btn-social mx-1" href="https://t.me/loki9x"><i class="fab fa-fw fa-telegram"></i></a>
-            <a class="btn btn-outline-light btn-social mx-1" href="https://my-invests.herokuapp.com"><i class="fab fa-fw fa-dribbble"></i></a>
-        </div>
-        <!-- Footer About Text-->
-        <div class="col-lg-4">
-            <h5 class="text-uppercase mb-2 mt-1">Tell us more</h5>
-            <p class="mb-0">
-                We are here together with you. <br>
-                Do not hesitate to require from us more & more.
-            </p>
-        </div>
+    <!--hr class="mb-4" /-->
+
+      <div class="col-lg-6 mb-3 text-center">
+        <a
+           class="btn btn-outline-light btn-social m-1"
+           href="https://facebook.com/loki9x"
+           role="button"
+           ><i class="fab fa-facebook-f"></i
+          ></a>
+        <a
+           class="btn btn-outline-light btn-social m-1"
+           href="https://twitter.com/TuenFV"
+           role="button"
+           ><i class="fab fa-twitter"></i
+          ></a>
+        <a
+           class="btn btn-outline-light btn-social m-1"
+           href="https://t.me/loki9x"
+           role="button"
+           ><i class="fab fa-telegram"></i
+          ></a>
+        <a
+           class="btn btn-outline-light btn-social m-1"
+           href="https://github.com/TuenFV"
+           role="button"
+           ><i class="fab fa-github"></i
+          ></a>
+      </div>
+
+      <div class="col-lg-6 mb-0">
+        <p class="d-flex justify-content-center align-items-center">
+          <span class="me-2">Register free</span>
+          <%= link_to "Sign up!", new_user_registration_path, class:"btn btn-outline-light btn-rounded" %>
+        </p>
+      </div>
     </div>
   </div>
-</footer>
-<!-- Copyright Section-->
-<div class="copyright py-2 text-center text-white">
-  <div class="container"><small>Copyright &copy; MyInvests 2022</small></div>
-</div>
 
+  <div class="copyright text-center p-2">
+    <small>Copyright &copy; MyInvests 2022</small>
+  </div>
+</footer>
