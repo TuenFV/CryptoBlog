@@ -25,7 +25,7 @@
     <div class="text-center">
       <i class="fa-solid fa-handshake-simple fa-3x"></i>
       <p class="mb-1">Amount</p>
-      <h6><%= number_to_currency(@pool.amount, precision: 0) unless @pool.amount.nil? %></h6>
+      <h6><%= @pool.amount.round(0) unless @pool.amount.nil? %> $</h6>
     </div>
   </div>
 
@@ -33,7 +33,7 @@
     <div class="text-center">
       <i class="fa-solid fa-circle-dollar-to-slot fa-3x"></i>
       <p class="mb-1">Token Price</p>
-      <h6>$<%= @pool.price %></h6>
+      <h6><%= @pool.price %> $</h6>
     </div>
   </div>
 
@@ -49,7 +49,13 @@
     <div class="text-center">
       <i class="fa-solid fa-sack-dollar fa-3x"></i>
       <p class="mb-1">Profit</p>
-      <h6>$<%= pool_profit(@pool) %></h6>
+      <% if pool_profit(@pool) == 0 %>
+        <h6>-</h6>
+      <% elsif pool_profit(@pool) < 0 %>
+        <h6 style="color: red;"><%= pool_profit(@pool) %> $</h6>
+      <% else %>
+        <h6 style="color: blue;"><%= pool_profit(@pool) %> $</h6>
+      <% end %>
     </div>
   </div>
 </div>
