@@ -20,14 +20,20 @@
     </div><br>
   <% end %>
 
-  <div>
-    <%= form.label "Vesting date: ", style:"color: #6c757d; font-size:1.5rem;" %>
-    <%= form.date_select :date %>
-  </div>
+  <div class="row">
+    <div class="col-md-6 justify-content-center">
+      <%= form.label "Vesting date: ", class:"mb-3", style:"color: #6c757d; font-size:1.1rem;" %><br>
+      <%= form.date_select :date, default: @defaut_date, start_year: Date.today.year - 2, end_year: Date.today.year + 5 %>
+    </div>
 
-  <div class="form-floating">
-    <%= form.number_field :rate, step: :any, class:"form-control", placeholder:"Rate, %" %>
-    <%= form.label "Rate, %" %>
+    <div class="form-floating col-md-6">
+    <% if params[:action] == "new" %>
+      <%= form.number_field :rate, step: :any, value: @defaut_rate, class:"form-control", placeholder:"Rate, %" %>
+    <% else %>
+      <%= form.number_field :rate, step: :any, class:"form-control", placeholder:"Rate, %" %>
+    <% end %>
+      <%= form.label "Rate, %" %>
+    </div>
   </div><br>
 
   <div>
