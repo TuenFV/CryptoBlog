@@ -10,11 +10,16 @@ class VestingsController < ApplicationController
   # GET /vestings/new
   def new
     @vesting = @pool.vestings.build()
+
+    @defaut_date = !@pool.vestings.second_to_last.nil? ? @pool.vestings.second_to_last.date : Date.today
+    @defaut_rate = !@pool.vestings.second_to_last.nil? ? @pool.vestings.second_to_last.rate : 0
   end
 
   # GET /vestings/1/edit
   def edit
   end
+
+
 
   # POST /vestings or /vestings.json
   def create
