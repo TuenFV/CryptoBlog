@@ -8,10 +8,9 @@
     <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
     <div class="divider-custom-line"></div>
   </div>
+  <div class="px-3">
+    <%= render "form", vesting: @vesting %><br/>
 
-  <%= render "form", vesting: @vesting %><br/>
-
-  <div>
     <%= link_to "Delete this vesting", [@pool, @vesting], method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-sm btn-danger" %>
   </div>
 </div>
