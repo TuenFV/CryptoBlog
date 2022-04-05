@@ -3,6 +3,6 @@ class Pool < ApplicationRecord
   has_many :vestings, dependent: :destroy
 
   validates :project, presence: true, uniqueness: { scope: :user_id }
-  validates :amount, presence: true, numericality: { greater_than: 0 }
+  validates :amount, numericality: { greater_than: 0 }
   validates :price, numericality: { greater_than: 0 }, allow_nil: true
 end
