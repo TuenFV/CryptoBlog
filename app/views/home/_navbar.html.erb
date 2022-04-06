@@ -13,6 +13,9 @@
         <% if user_signed_in? %>
           <li class="mx-0 mx-lg-1" ><%= link_to current_user.email, edit_user_registration_path, class:"nav-link py-3 px-0 px-lg-2 rounded" %></li>
           <li class="nav-item mx-0 mx-lg-1"><%= link_to "Logout", destroy_user_session_path, method: :delete, class:"nav-link py-3 px-0 px-lg-2 rounded" %></li>
+          <% if current_user.admin? %>
+            <li class="nav-item"><%= link_to "Admin", rails_admin.index_path(User), class:"nav-link py-3 px-0 px-lg-2 rounded" %></li>
+          <% end %>
         <% else %>
           <li class="nav-item"><%= link_to "Login", new_user_session_path, class:"nav-link py-3 px-0 px-lg-2 rounded" %></li>
         <% end %>
