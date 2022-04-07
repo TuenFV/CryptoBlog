@@ -4,16 +4,16 @@
     <div class="row">
     <!--hr class="mb-4" /-->
 
-      <div class="col-lg-6 mb-3 text-center">
+      <div class="col-lg-4 mt-2 mb-0 text-center">
         <a
            class="btn btn-outline-light btn-social m-1"
-           href="https://facebook.com/loki9x"
+           href="#"
            role="button"
            ><i class="fab fa-facebook-f"></i
           ></a>
         <a
            class="btn btn-outline-light btn-social m-1"
-           href="https://twitter.com/TuenFV"
+           href="#"
            role="button"
            ><i class="fab fa-twitter"></i
           ></a>
@@ -25,16 +25,20 @@
           ></a>
         <a
            class="btn btn-outline-light btn-social m-1"
-           href="https://github.com/TuenFV"
+           href="#"
            role="button"
            ><i class="fab fa-github"></i
           ></a>
       </div>
 
-      <div class="col-lg-6 mb-0">
+      <div class="col-lg-4 mb-2 text-center" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+        <a class="btn btn-outline-light btn-coffee m-1"
+           role="button"><i class="fas fa-mug-hot fa-1x"></i></a><br/>
+        Tip me a coffee!
+      </div>
+      <div class="col-lg-4 mt-2 text-center">
         <p class="d-flex justify-content-center align-items-center">
-          <span class="me-2">Register free</span>
-          <%= link_to "Sign up!", new_user_registration_path, class:"btn btn-outline-light btn-rounded" %>
+          <%= link_to '<i class="fa-solid fa-users"></i> Sign up free!'.html_safe, new_user_registration_path, class:"btn btn-outline-light btn-rounded" %>
         </p>
       </div>
     </div>
@@ -42,5 +46,38 @@
 
   <div class="copyright text-center p-2">
     <small>Copyright &copy; MyInvests 2022</small>
+  </div>
+
+  <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        <div class="modal-header border-0" style="font-size: 1rem;"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+        <div class="modal-body text-center pb-3">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <!-- Portfolio Modal - Title-->
+                <h2 class="text-secondary mb-0">Coffee Lover</h2>
+                <!-- Icon Divider-->
+                <div class="divider-custom mb-1">
+                  <div class="divider-custom-line"></div>
+                  <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                  <div class="divider-custom-line"></div>
+                </div>
+                <!-- Portfolio Modal - Image-->
+                <p style="color: black;" class="text-center mb-0">MB Bank</p>
+                <%= image_tag ("coffee/mbbank.jpg"), size: "200", class:"img-fluid rounded mb-1" %>
+                <!-- Portfolio Modal - Text-->
+                <p style="color: black;" class="text-center mb-0">ViettelPay</p>
+                <%= image_tag ("coffee/viettelpay.png"), size: "200", class:"img-fluid rounded mb-1" %>
+                <button class="btn btn-primary mt-3" data-bs-dismiss="modal">
+                  Thank you <i class="fa-solid fa-hands-clapping"></i>
+                </button>
+              </div>
+            </div>
+            </div>
+        </div>
+      </div>
+    </div>
   </div>
 </footer>

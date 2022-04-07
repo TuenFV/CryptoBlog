@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Welcome to My Invests</title>
+    <title><%= "My Invests" + ( " | " + yield(:title) unless yield(:title).blank?).to_s %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -16,7 +16,7 @@
   </head>
 
   <body class="d-flex flex-column min-vh-100">
-    <%= render 'home/navbar' %><br/><br/><br/><br/><br/>
+    <%= render 'home/navbar' %><br>
     <div class="container">
       <%= render 'layouts/flash' %>
     </div>

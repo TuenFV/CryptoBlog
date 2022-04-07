@@ -11,4 +11,8 @@ class HomeController < ApplicationController
 
     #Grab Prices
   end
+
+  def prices
+
+  end
 end

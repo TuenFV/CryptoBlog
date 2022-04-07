@@ -4087,9 +4087,9 @@ textarea.form-control-lg {
 }
 
 .navbar-toggler {
-  padding: 0.25rem 0.75rem;
+  padding: 0.25rem 0.5rem;
   font-size: 1.25rem;
-  line-height: 1;
+  line-height: 0.8;
   background-color: transparent;
   border: 0.125rem solid transparent;
   border-radius: 0.5rem;
@@ -4120,7 +4120,7 @@ textarea.form-control-lg {
 }
 
 .navbar-nav-scroll {
-  max-height: var(--bs-scroll-height, 75vh);
+  max-height: var(--bs-scroll-height, 40vh);
   overflow-y: auto;
 }
 
@@ -5564,14 +5564,14 @@ textarea.form-control-lg {
   flex-shrink: 0;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 1rem;
+  padding: 0.3rem 0.6rem;
   border-bottom: 0.125rem solid #dee2e6;
   border-top-left-radius: 0.625rem;
   border-top-right-radius: 0.625rem;
 }
 .modal-header .btn-close {
-  padding: 0.5rem 0.5rem;
-  margin: -0.5rem -0.5rem -0.5rem auto;
+  padding: 0.2rem 0.4rem;
+  margin: -0.2rem -0.2rem -0.2rem auto;
 }
 
 .modal-title {
@@ -11356,9 +11356,18 @@ html {
   align-items: center;
 }
 
+.btn-coffee {
+  display: inline-flex;
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.3rem;
+  justify-content: center;
+  align-items: center;
+}
+
 #mainNav {
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 700;
 }
@@ -11382,17 +11391,17 @@ html {
 }
 #mainNav .navbar-toggler {
   font-size: 80%;
-  padding: 0.8rem;
+  padding: 0.4rem;
 }
 
 @media (min-width: 992px) {
   #mainNav {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     transition: padding-top 0.3s, padding-bottom 0.3s;
   }
   #mainNav .navbar-brand {
-    font-size: 1.75em;
+    font-size: 1.5em;
     transition: font-size 0.3s;
   }
   #mainNav .navbar-nav {
@@ -11408,11 +11417,11 @@ html {
   }
 
   #mainNav.navbar-shrink {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
   }
   #mainNav.navbar-shrink .navbar-brand {
-    font-size: 1.5em;
+    font-size: 1.3em;
   }
 }
 .form-floating input.form-control,
@@ -11486,8 +11495,8 @@ html {
 
 .portfolio-modal .btn-close {
   color: #1abc9c;
-  font-size: 2rem;
-  padding: 1rem;
+  font-size: 1rem;
+  padding: 0.5rem;
 }
 .portfolio-modal .portfolio-modal-title {
   font-size: 2.25rem;
