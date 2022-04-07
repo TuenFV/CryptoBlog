@@ -13,6 +13,7 @@ class HomeController < ApplicationController
   end
 
   def prices
-
+    @symbol = params[:ticker]
+    @contract = params[:contract]
   end
 end

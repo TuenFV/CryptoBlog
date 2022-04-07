@@ -1,21 +1,34 @@
 <% content_for :title, "Prices" %>
+
 <div class="container">
-  <h3 class="page-section-heading text-center text-uppercase text-secondary mb-0">Search Tokens</h3>
+  <h5 class="page-section-heading text-center text-uppercase text-secondary mb-0">Search Price</h5>
   <div class="divider-custom">
     <div class="divider-custom-line"></div>
-    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-    <div class="divider-custom-line"></div>
-  </div><br>
+  </div>
 
+  <%= form_with url: prices_path, method: :get do %>
+    <%= search_field_tag(:ticker, nil, placeholder: 'Enter token symbol') %>
+    <%= submit_tag("Search") %>
+  <% end %>
+  <br>
+  <%= @symbol %>
+  <br/>
 
-  <h3 class="page-section-heading text-center text-uppercase text-secondary mb-0">PooCoin Chart</h3>
-    <div class="divider-custom">
-      <div class="divider-custom-line"></div>
-      <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+  <%= form_with url: prices_path, method: :get do %>
+    <%= search_field_tag(:contract, nil, placeholder: 'Enter contact address') %>
+    <%= submit_tag("Search") %>
+  <% end %>
+  <br>
+
+  <%= @contract %>
+
+  <h5 class="page-section-heading text-center text-uppercase text-secondary mb-0">PooCoin Chart</h5>
+    <div class="divider-custom mb-1">
       <div class="divider-custom-line"></div>
     </div>
-  <div style="border: 0px solid #D5CC5A; overflow: hidden; margin: 15px auto; max-width: 595px;">
+    <!--p class="text-center"><a href="https://poocoin.app/">Offical page</a></p>
+    <div style="border: 0px solid #D5CC5A; overflow: hidden; margin: 15px auto; max-width: 595px;">
     <iframe scrolling="no" src="https://poocoin.app/tokens/bnb" style="border: 0px none; margin-left: 0px; height: 1170px; margin-top: -250px; width: 650px;">
     </iframe>
-  </div>
+  </div-->
 </div>
