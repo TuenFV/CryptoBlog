@@ -1,6 +1,6 @@
 class UserMailer < ApplicationMailer
   include Devise::Controllers::UrlHelpers
-  default from: "no-reply@myinvest.com"
+  default from: "myinvests.herokuapp@gmail.com"
 
   def remind_vesting_date
     @user = params[:user]
