@@ -5,22 +5,58 @@
   <div class="divider-custom">
     <div class="divider-custom-line"></div>
   </div>
+<div class="d-flex justify-content-around">
+  <div class="p-2">
 
   <%= form_with url: prices_path, method: :get do %>
-    <%= search_field_tag(:ticker, nil, placeholder: 'Enter token symbol') %>
+    <%= search_field_tag(:ticker, nil, placeholder: 'Enter token name') %>
     <%= submit_tag("Search") %>
   <% end %>
   <br>
-  <%= @symbol %>
-  <br/>
+  <% if @name == "" %>
+  Please input token name!
+  <% else %>
+    <% unless @token.nil? %>
+      <table class="table table-hover table-bordered">
+      <thead class="table-primary text-center align-middle">
+        <tr>
+          <th rowspan="2">Ticker</th>
+          <th rowspan="2">Name</th>
+          <th rowspan="2">Current Price</th>
+          <th rowspan="2">MarketCap</th>
+          <th colspan="2">24H Change</th>
+        </tr>
+        <tr>
+          <th>$</th>
+          <th>%</th>
+        </tr>
+      </thead>
+      <tbody class="text-center align-middle">
+        <td><%= @token["symbol"].upcase  %></td>
+        <td><%= @token["name"] %></td>
+        <td>$<%= number_with_delimiter(@token["current_price"], :delimiter => ',')  %></td>
+        <td>$<%= number_to_human(@token["market_cap"]) %></td>
+        <td><%= @token["price_change_24h"].round(2) unless @token["price_change_24h"].nil? %></td>
+        <td><%= @token["price_change_percentage_24h"].round(2) unless @token["price_change_percentage_24h"].nil? %></td>
+      </tbody>
+    </table>
+    <% else %>
+      Not found token with name: <b><%= @name %></b> !!
+    <% end %>
+  <% end %>
 
-  <%= form_with url: prices_path, method: :get do %>
-    <%= search_field_tag(:contract, nil, placeholder: 'Enter contact address') %>
+  <br/>
+  </div>
+<div class="p-2">
+  <% form_with url: prices_path, method: :get do %>
+    <%= search_field_tag(:contract, nil, placeholder: 'Enter contract address') %>
     <%= submit_tag("Search") %>
   <% end %>
   <br>
 
   <%= @contract %>
+</div>
+</div>
 
   <h5 class="page-section-heading text-center text-uppercase text-secondary mb-0">PooCoin Chart</h5>
     <div class="divider-custom mb-1">

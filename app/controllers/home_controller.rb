@@ -13,7 +13,12 @@ class HomeController < ApplicationController
   end
 
   def prices
-    @symbol = params[:ticker]
-    @contract = params[:contract]
+    @client = CoingeckoRuby::Client.new
+
+    @name = params[:ticker]
+
+    unless @name.nil?
+       @token = @client.markets(params[:ticker].to_s, vs_currency:'usd')[0]
+    end
   end
 end
