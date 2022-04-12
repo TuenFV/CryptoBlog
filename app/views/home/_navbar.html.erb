@@ -7,10 +7,9 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item"><%= link_to "News", root_path, class:"nav-link px-lg-2 rounded" %></li>
-        <li class="nav-item"><%= link_to "Prices", prices_path, class:"nav-link px-lg-2 rounded" %></li>
+        <li class="nav-item"><%= link_to "Market", prices_path, class:"nav-link px-lg-2 rounded" %></li>
         <% if user_signed_in? %>
           <li class="nav-item"><%= link_to "Pools", pools_path, class:"nav-link px-lg-2 rounded" %></li>
-          <li class="nav-item"><%= link_to "Portfolio", pools_path, class:"nav-link px-lg-2 rounded" %></li>
           <li class="mx-0 mx-lg-1" ><%= link_to current_user.email, edit_user_registration_path, class:"nav-link px-lg-2 rounded" %></li>
           <li class="nav-item"><%= link_to "Logout", destroy_user_session_path, method: :delete, class:"nav-link px-lg-2 rounded" %></li>
           <% if current_user.admin? %>
@@ -25,4 +24,3 @@
     </div>
   </div>
 </nav>
-<br/><br/><br/>

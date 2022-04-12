@@ -39,3 +39,14 @@ en:
       - :day
       - :month
       - :year
+  number:
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          unit: ""
+          thousand: K
+          million: m
+          billion: B
+          trillion: T
+          quadrillion: Q

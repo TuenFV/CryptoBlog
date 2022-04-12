@@ -16,13 +16,11 @@
   </head>
 
   <body class="d-flex flex-column min-vh-100">
-    <%= render 'home/navbar' %><br>
-    <div class="container">
+    <%= render 'home/navbar' %>
+    <div class="container mt-6">
       <%= render 'layouts/flash' %>
+      <%= yield %>
     </div>
-
-    <%= yield %>
-
     <%= render 'home/footer' %>
   </body>
 </html>

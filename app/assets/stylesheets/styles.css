@@ -1987,9 +1987,6 @@ progress {
 .table > thead {
   vertical-align: bottom;
 }
-.table > :not(:first-child) {
-  border-top: 0.25rem solid currentColor;
-}
 
 .caption-top {
   caption-side: top;
@@ -7325,6 +7322,10 @@ textarea.form-control-lg {
 
 .mt-5 {
   margin-top: 3rem !important;
+}
+
+.mt-6 {
+  margin-top: 5.5rem !important;
 }
 
 .mt-auto {

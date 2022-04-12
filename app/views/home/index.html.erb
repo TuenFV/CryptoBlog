@@ -10,7 +10,7 @@
   <div class="row d-flex">
     <% @news["Data"].first(20).each do |article| %>
       <div class="col-sm ">
-        <div class="card justify-content-center" style="width: 15rem; height: 40rem;">
+        <div class="card justify-content-center" style="width: 15rem; height: 40rem; border-width: 0.05rem;">
           <a href="<%= article["url"] %>">
             <img src="<%= article["imageurl"] %>" class="card-img-top" alt="img">
           </a>
