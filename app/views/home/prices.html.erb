@@ -1,4 +1,4 @@
-<% content_for :title, "Markets" %>
+<% content_for :title, "Market" %>
 
 <div class="container">
   <h5 class="page-section-heading text-center text-uppercase text-secondary mb-0">Live Market</h5>
@@ -31,9 +31,9 @@
             <i style="font-size: 0.8rem;"><%= token["symbol"] %></i>
         </td>
         <td>$<%= number_with_delimiter(token["priceUsd"].to_f.round(2), :delimiter => ',') unless token["priceUsd"].nil? %></td>
-        <td><%= number_to_human(token["marketCapUsd"]) %></td>
+        <td>$<%= number_to_human(token["marketCapUsd"]) %></td>
         <td><%= number_to_human(token["supply"]) %></td>
-        <td><%= number_to_human(token["volumeUsd24Hr"]) %></td>
+        <td>$<%= number_to_human(token["volumeUsd24Hr"]) %></td>
         <% if token["changePercent24Hr"].to_f < 0 %>
           <td style="color: red;">
         <% else %>

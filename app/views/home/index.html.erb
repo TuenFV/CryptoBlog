@@ -1,6 +1,6 @@
 <% content_for :title, "Home" %>
 
-<div class="container">
+<div class="container align-middle">
   <h3 class="page-section-heading text-center text-uppercase text-secondary mb-0">Lastest News</h3>
   <div class="divider-custom">
     <div class="divider-custom-line"></div>
@@ -9,8 +9,8 @@
   </div>
   <div class="row d-flex">
     <% @news["Data"].first(20).each do |article| %>
-      <div class="col-sm ">
-        <div class="card justify-content-center" style="width: 15rem; height: 40rem; border-width: 0.05rem;">
+      <div class="col-md justify-content-between">
+        <div class="card mx-auto" style="width: 15rem; height: 40rem; border-width: 0.05rem;">
           <a href="<%= article["url"] %>">
             <img src="<%= article["imageurl"] %>" class="card-img-top" alt="img">
           </a>
