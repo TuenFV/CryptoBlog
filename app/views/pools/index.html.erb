@@ -7,24 +7,25 @@
     <div class="divider-custom-line"></div>
   </div>
 
-  <table class="table table-hover table-bordered">
-    <thead class="table-dark text-center">
-      <tr>
-        <th>Project</th>
-        <th>Round</th>
-        <th>Platform</th>
-        <th>Amount, $</th>
-        <th>Price, $</th>
-        <th>Profit, $</th>
-        <th>Vesting Schedule</th>
-        <th>Launch Date</th>
-      </tr>
-    </thead>
-    <tbody>
-      <%= render @pools %>
-    </tbody>
-  </table>
-
+  <div class="table-responsive">
+    <table class="table table-hover table-bordered">
+      <thead class="table-dark text-center">
+        <tr>
+          <th>Project</th>
+          <th>Round</th>
+          <th>Platform</th>
+          <th>Amount, $</th>
+          <th>Price, $</th>
+          <th>Profit, $</th>
+          <th>Vesting Schedule</th>
+          <th>Launch Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @pools %>
+      </tbody>
+    </table>
+  </div>
   <div class="ms-2">
     <%= link_to "New Project", new_pool_path, class:"btn btn-sm btn-primary" %>
   </div>
