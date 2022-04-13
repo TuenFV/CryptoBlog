@@ -45,7 +45,7 @@
 
       <div>
         <%= form.label :launchdate, "Launch Date:", style:"color: #6c757d; font-size:1.5rem;" %>
-        <%= form.date_select :launchdate, include_blank: true %>
+        <%= form.date_select :launchdate, selected: Date.today, include_blank: true, start_year: Date.today.year - 2, end_year: Date.today.year + 3  %>
       </div>
 
       <div>

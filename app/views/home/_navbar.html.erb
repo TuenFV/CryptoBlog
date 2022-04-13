@@ -1,23 +1,23 @@
-<nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
-  <div class="container">
-    <%# <%= image_tag ("logo.png") %>
+<nav class="navbar navbar-expand-md bg-secondary text-uppercase fixed-top" id="mainNav">
+  <div class="container mb-0">
+    <%= image_tag "logo_transparent.png", size: "60" %>
     <%= link_to "My Invests", root_path, class:"navbar-brand" %>
     <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu<i class="fas fa-bars"></i>
-    </button>
+    </button><br>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><%= link_to "Pools", pools_path, class:"nav-link py-3 px-0 px-lg-2 rounded" %></li>
-        <li class="nav-item"><a class="nav-link py-3 px-0 px-lg-2 rounded" href="#portfolio">Portfolio</a></li>
-        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-2 rounded" href="#contact">Contact</a></li>
-
+        <li class="nav-item"><%= link_to "News", root_path, class:"nav-link px-lg-2 rounded" %></li>
+        <li class="nav-item"><%= link_to "Market", prices_path, class:"nav-link px-lg-2 rounded" %></li>
         <% if user_signed_in? %>
-          <li class="mx-0 mx-lg-1" ><%= link_to current_user.email, edit_user_registration_path, class:"nav-link py-3 px-0 px-lg-2 rounded" %></li>
-          <li class="nav-item mx-0 mx-lg-1"><%= link_to "Logout", destroy_user_session_path, method: :delete, class:"nav-link py-3 px-0 px-lg-2 rounded" %></li>
+          <li class="nav-item"><%= link_to "Pools", pools_path, class:"nav-link px-lg-2 rounded" %></li>
+          <li class="mx-0 mx-lg-1" ><%= link_to current_user.email, edit_user_registration_path, class:"nav-link px-lg-2 rounded" %></li>
+          <li class="nav-item"><%= link_to "Logout", destroy_user_session_path, method: :delete, class:"nav-link px-lg-2 rounded" %></li>
           <% if current_user.admin? %>
-            <li class="nav-item"><%= link_to "Admin", rails_admin.index_path(User), class:"nav-link py-3 px-0 px-lg-2 rounded" %></li>
+            <li class="nav-item"><%= link_to "Admin", rails_admin.index_path(User), class:"nav-link px-lg-2 rounded" %></li>
           <% end %>
         <% else %>
-          <li class="nav-item"><%= link_to "Login", new_user_session_path, class:"nav-link py-3 px-0 px-lg-2 rounded" %></li>
+          <li class="mx-0 mx-lg-1"><%= link_to "Login", new_user_session_path, class:"nav-link px-lg-2 rounded" %></li>
+          <li class="nav-item"><%= link_to "Register", new_user_registration_path, class:"nav-link px-lg-2 rounded" %></li>
         <% end %>
       </ul>
       </div>

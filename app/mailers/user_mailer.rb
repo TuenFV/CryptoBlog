@@ -1,6 +1,6 @@
 class UserMailer < ApplicationMailer
   include Devise::Controllers::UrlHelpers
-  default from: "no-reply@myinvest.com"
+  default from: "myinvests.herokuapp@gmail.com"
 
   def remind_vesting_date
     @user = params[:user]
@@ -8,6 +8,14 @@ class UserMailer < ApplicationMailer
     @vesting = params[:vesting]
     @url = "https://my-invests.herokuapp.com/pools/#{@pool.id}/vestings/#{@vesting.id}/edit"
     mail(to: @user.email, subject: "[New Vesting] #{@pool.project} Tomorrow!")
+  end
+
+  def remind_vesting_date_today
+    @user = params[:user]
+    @pool = params[:pool]
+    @vesting = params[:vesting]
+    @url = "https://my-invests.herokuapp.com/pools/#{@pool.id}/vestings/#{@vesting.id}/edit"
+    mail(to: @user.email, subject: "[Reminder] #{@pool.project} Vesting Today!")
   end
 
   def notify_new_pool_create

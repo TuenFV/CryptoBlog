@@ -1,5 +1,5 @@
+<% content_for :title, "Sign Up" %>
 <div class="container mb-4">
-
   <h2 class="masthead-heading text-center text-uppercase text-secondary mb-0">Join with us</h2>
   <div class="divider-custom">
     <div class="divider-custom-line"></div>
@@ -16,13 +16,13 @@
       </div>
 
       <div class="field form-floating">
-        <%= f.password_field :password, autocomplete: "off", class:"form-control", placeholder:"Password*" %>
-        <%= f.label :password, "Password*" %>
+        <%= f.password_field :password, autocomplete: "off", class:"form-control", placeholder:"Password" %>
+        <%= f.label :password, "Password" %>
       </div>
 
       <div class="field form-floating">
         <%= f.password_field :password_confirmation, autocomplete: "off", class:"form-control", placeholder:"Password confirmation" %>
-        <%= f.label :password_confirmation %><br />
+        <%= f.label :password_confirmation, "Confirm Password" %>
       </div>
       <p class="float-start">
         <% if @minimum_password_length %>
@@ -35,7 +35,7 @@
       </div>
     <% end %><br/>
     <p class="mb-0 text-start">
-      Or you already have an account?&nbsp;
+      Already have an account?&nbsp;
       <strong><%= link_to " Log-in here", new_user_session_path %></strong>
     </p>
   </div>

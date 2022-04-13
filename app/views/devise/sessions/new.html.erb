@@ -1,3 +1,4 @@
+<% content_for :title, "Login" %>
 <div class="container mb-4">
   <h2 class="masthead-heading text-center text-uppercase text-secondary mb-0">Welcome</h2>
   <div class="divider-custom">
@@ -20,15 +21,18 @@
         <%= f.label :password %><br />
       </div>
 
+      <div class="d-flex justify-content-between mb-3">
+
+      <div class="p-2">
       <% if devise_mapping.rememberable? %>
-        <div class="field">
-          <p class="float-start">
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me %>
-          </p>
-          <span class="float-end mb-3"><%= link_to "Forgot your password?", new_user_password_path %></span>
-        </div><br /><br />
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me %>
+      </div>
+      <div class="p-2">
+        <%= link_to "Forgot password?", new_user_password_path %>
+      </div>
       <% end %>
+      </div>
 
       <div class="actions">
         <%= f.submit "Log in", class:"btn btn-secondary rounded px-5 text-uppercase" %>
