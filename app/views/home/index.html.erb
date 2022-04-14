@@ -10,15 +10,18 @@
   <div class="row d-flex">
     <% @news["Data"].first(24).each do |article| %>
       <div class="col-md justify-content-between">
-        <div class="card mx-auto" style="min-width: 15rem; max-width: 20rem;height: 40rem; border-width: 0.05rem;">
+        <div class="card mx-auto" style="min-width: 15rem; max-width: 20rem;height: 37rem; border-width: 0.05rem;">
           <a href="<%= article["url"] %>">
             <img src="<%= article["imageurl"] %>" class="card-img-top" alt="img">
           </a>
           <div class="card-body">
-            <h5 class="card-title"><%= article["title"] %></h5>
-            <p><i><%= Time.at(article["published_on"].to_i)%></i></p>
+            <h5 class="card-title" style="text-decoration: none;"><%= article["title"] %></h5>
+            <p style="font-size: 0.8rem;">
+              <span><%= article["source"].capitalize %> | </span>
+              <i><%= time_ago_in_words(Time.at(article["published_on"].to_i)).capitalize %> ago</i>
+            </p>
             <p class="card-text text-align-justify">
-              <%= truncate article["body"], length: 155 %><br/>
+              <%= truncate article["body"], length: 99%><br/>
               <a href="<%= article["url"] %>"> Read more...</a>
             </p>
           </div>

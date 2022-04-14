@@ -14,7 +14,7 @@ class HomeController < ApplicationController
 
   def prices
 
-  @url_price = "https://api.coincap.io/v2/assets/?limit=100"
+  @url_price = "https://api.coincap.io/v2/assets/?limit=50"
   @uri_price = URI(@url_price)
   @respone_price = Net::HTTP.get(@uri_price)
   #@respone_price['Authorization'] = '67595558-d5e2-4224-a42a-fb880e9458ca'

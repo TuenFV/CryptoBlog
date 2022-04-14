@@ -1,0 +1,17 @@
+<tr>
+  <td class="text-center"><%= price.rank %></td>
+  <td class="text-start">
+      <%= price.name %><br>
+      <i style="font-size: 0.8rem;"><%= price.symbol %></i>
+  </td>
+  <td>$<%= price.price < 0.0001 ? price.price.round(8) : price.price.round(2) %></td>
+  <td>$<%= number_to_human(price.marketcap) %></td>
+  <td><%= number_to_human(price.supply) %></td>
+  <td>$<%= number_to_human(price.volume24h) %></td>
+  <% if price.changepercent24h < 0 %>
+    <td style="color: red;">
+  <% else %>
+    <td style="color: green;">
+  <% end %>
+    <%= price.changepercent24h.to_d.round(2) %>%</td>
+</tr>

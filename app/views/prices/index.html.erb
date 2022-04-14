@@ -1,0 +1,21 @@
+<h1>Prices#index</h1>
+<p>Find me in app/views/prices/index.html.erb</p>
+
+<div class="table-responsive">
+  <table class="table align-middle text-end table-hover mb-0">
+    <thead class="align-middle">
+      <tr>
+        <th class="text-center">Rank</th>
+        <th class="text-start">Name</th>
+        <th>Price</th>
+        <th>MarketCap</th>
+        <th>Supply</th>
+        <th style="min-width: 90px;">Volume (24Hr)</th>
+        <th>Change (24Hr)</th>
+      </tr>
+    </thead>
+    <tbody>
+        <%= render @prices %>
+    </tbody>
+  </table>
+</div>

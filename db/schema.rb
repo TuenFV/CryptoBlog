@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_05_102443) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_13_060547) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -26,6 +26,19 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_05_102443) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.index ["user_id"], name: "index_pools_on_user_id"
+  end
+
+  create_table "prices", force: :cascade do |t|
+    t.integer "rank"
+    t.string "name"
+    t.string "symbol"
+    t.decimal "price"
+    t.decimal "marketcap"
+    t.decimal "supply"
+    t.decimal "volume24h"
+    t.decimal "changepercent24h"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

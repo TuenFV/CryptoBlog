@@ -45,7 +45,7 @@ en:
         format: "%n %u"
         units:
           unit: ""
-          thousand: K
+          thousand: k
           million: m
           billion: B
           trillion: T
