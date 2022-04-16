@@ -7,21 +7,20 @@
     <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
     <div class="divider-custom-line"></div>
   </div>
-
   <div class="row align-items-center mb-1">
-    <% @news["Data"].first(24).each do |article| %>
+    <% @news["Data"].first(30).each do |article| %>
       <div class="col-sm-auto mx-auto">
-        <div class="d-flex flex-row align-items-center" style="max-width: 32rem; height: 11rem;">
+        <div class="d-flex flex-row align-items-center" style="max-width: 32rem; height: 10rem;">
           <div class="p-2">
             <a href="<%= article["url"] %>" style="text-decoration: none; color:inherit;">
-            <img src="<%= article["imageurl"] %>" class="card-img" alt="img" style="width: 7rem;">
+            <img src="<%= article["imageurl"] %>" class="card-img" alt="img" style="width: 6.5rem;">
           </div>
           <div class="p-2">
             <div class="card-body">
               <h6 class="card-title"><%= article["title"] %></h6></a>
-              <p class="card-text" style="font-size: 0.75rem;"><small class="text-muted">
+              <p class="card-text" style="font-size: 0.75rem;"><span class="text-muted">
                 <%= article["source"].capitalize %> |
-                <i><%= time_ago_in_words(Time.at(article["published_on"].to_i)).capitalize %> ago</i></small>
+                <%= time_ago_in_words(Time.at(article["published_on"].to_i)).capitalize %> ago</span>
               </p>
            </div>
           </div>

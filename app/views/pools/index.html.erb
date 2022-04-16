@@ -14,15 +14,31 @@
           <th>Project</th>
           <th>Round</th>
           <th>Platform</th>
-          <th>Amount, $</th>
-          <th>Price, $</th>
-          <th>Profit, $</th>
+          <th>Amount</th>
+          <th>Price</th>
+          <th>Profit</th>
           <th>Vesting Schedule</th>
           <th>Launch Date</th>
         </tr>
       </thead>
       <tbody>
         <%= render @pools %>
+        <tr class="text-center border-0">
+          <td colspan="3" class="text-end border-0"><b>Total:</b></td>
+          <td class="border-0"><b>$<%= number_with_delimiter(current_user.pools.sum("amount").round(0), delimiter: ",") %><b></td>
+          <td class="border-0"></td>
+          <td class="border-0"><b>
+            <% if total_profit(current_user) == 0 %>
+              <span>
+            <% elsif total_profit(current_user) < 0 %>
+              <span style="color: red;">
+            <% else %>
+              <span style="color: blue;">
+            <% end %>
+            <%= number_with_delimiter(total_profit(current_user), delimiter: ",") %>$</span></b></td>
+          <td class="border-0"></td>
+          <td class="border-0"></td>
+        </tr>
       </tbody>
     </table>
   </div>

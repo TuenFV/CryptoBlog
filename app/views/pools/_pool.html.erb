@@ -3,17 +3,16 @@
     <td><%= link_to pool.project, pool %></td>
     <td><%= pool.round %></td>
     <td><%= pool.platform %></td>
-    <td><%= pool.amount.round(0) unless pool.amount.nil? %></td>
-    <td><%= pool.price %></td>
-
+    <td>$<%= pool.amount.round(0) unless pool.amount.nil? %></td>
+    <td>$<%= pool.price %></td>
     <% if pool_profit(pool) == 0 %>
-      <td>-</td>
+      <td>
       <% elsif pool_profit(pool) < 0 %>
-      <td style="color: red;"><%pool_profit(pool) %></td>
+      <td style="color: red;">
     <% else %>
-      <td style="color: blue;"><b><%= pool_profit(pool) %></b></td>
+      <td style="color: blue;">
     <% end %>
-    
+    <%= number_with_delimiter(pool_profit(pool), delimiter: ",") %>$</td>
     <td class="text-start"><%= link_to pool.vesting, pool_vestings_path(pool) %></td>
     <td><%= pool.launchdate.nil? ? "Updating..." : pool.launchdate.strftime('%d/%m/%Y') %></td>
   </tr>
