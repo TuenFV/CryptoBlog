@@ -5,7 +5,7 @@ class PoolsController < ApplicationController
 
   # GET /pools or /pools.json
   def index
-    @pools = current_user.pools.sort.reverse!
+    @pools = current_user.pools.order(launchdate: :desc)
   end
 
   # GET /pools/1 or /pools/1.json

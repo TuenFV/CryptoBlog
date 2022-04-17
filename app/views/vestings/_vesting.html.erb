@@ -8,8 +8,8 @@
       <%= vesting.date.strftime('%d/%m/%Y') %></s>
     </td>
     <td><%= vesting.rate.round(2) unless vesting.rate.nil? %> %</td>
-    <td><%= token_recieve(vesting) %></td>
-    <td><%= vesting.soldtoken.round(0) unless vesting.soldtoken.nil? %></td>
-    <td><%= vesting.return.round(0) unless vesting.return.nil? %></td>
+    <td><%= number_with_delimiter(token_recieve(vesting)) %></td>
+    <td><%= number_with_delimiter(vesting.soldtoken.round(0)) unless vesting.soldtoken.nil? %></td>
+    <td><%= number_with_delimiter(vesting.return.round(0)) unless vesting.return.nil? %></td>
   </tr>
 </div>

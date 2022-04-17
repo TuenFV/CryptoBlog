@@ -10,7 +10,7 @@
   <div class="table-responsive">
     <table class="table table-hover table-bordered">
       <thead class="table-dark text-center">
-        <tr>
+        <tr class="align-middle">
           <th>Project</th>
           <th>Round</th>
           <th>Platform</th>
@@ -35,7 +35,7 @@
             <% else %>
               <span style="color: blue;">
             <% end %>
-            <%= number_with_delimiter(total_profit(current_user), delimiter: ",") %>$</span></b></td>
+            <%= number_with_delimiter(total_profit(current_user)) %>$</span></b></td>
           <td class="border-0"></td>
           <td class="border-0"></td>
         </tr>
