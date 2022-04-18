@@ -4,7 +4,7 @@ class VestingsController < ApplicationController
   before_action :set_vesting, only: %i[ show edit update destroy ]
   # GET /vestings or /vestings.json
   def index
-    @vestings = @pool.vestings
+    @vestings = @pool.vestings.order(:date).page params[:page]
   end
 
   # GET /vestings/new

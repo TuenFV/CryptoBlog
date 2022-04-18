@@ -42,6 +42,10 @@
       </tbody>
     </table>
   </div>
+  <div class="text-end mb-0">
+    <%= link_to_prev_page @pools, '< Prev' %>&nbsp;
+    <%= link_to_next_page @pools, 'Next >' %>
+  </div>
   <div>
     <%= link_to "New Project", new_pool_path, class:"btn btn-sm btn-primary" %>
   </div>

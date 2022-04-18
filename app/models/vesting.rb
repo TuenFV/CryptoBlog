@@ -20,4 +20,6 @@ class Vesting < ApplicationRecord
   validates :rate, presence: true, numericality: { greater_than: 0}
   validates :soldtoken, :return, numericality: { greater_than: 0}, allow_nil: true
   validates_with TotalRateValidator
+
+  paginates_per 10
 end

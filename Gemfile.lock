@@ -276,6 +276,7 @@ DEPENDENCIES
   devise
   importmap-rails
   jbuilder
+  kaminari
   letter_opener
   pg (~> 1.1)
   puma (~> 5.0)

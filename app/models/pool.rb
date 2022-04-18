@@ -5,4 +5,6 @@ class Pool < ApplicationRecord
   validates :project, presence: true, uniqueness: { scope: :user_id }
   validates :amount, numericality: { greater_than: 0 }
   validates :price, numericality: { greater_than: 0 }, allow_nil: true
+
+  paginates_per 10
 end

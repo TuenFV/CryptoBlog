@@ -24,13 +24,18 @@
         </tr>
       </thead>
       <tbody>
-        <% @k = 1 %>
+        <% @k = @vestings.current_page*10 - 10 + 1 %>
         <% @vestings.sort_by(&:date).each do |vesting| %>
           <%= render vesting %>
           <% @k += 1 %>
       <% end %>
       </tbody>
     </table>
+  </div>
+  <div class="text-end mb-0">
+    <%#= paginate @vestings, window: 2 %>
+    <%= link_to_prev_page @vestings, '< Prev' %>&nbsp;
+    <%= link_to_next_page @vestings, 'Next >' %>
   </div>
   <div>
     <%= link_to "New Vesting", new_pool_vesting_path(@pool), class:"btn btn-sm btn-primary" %>
