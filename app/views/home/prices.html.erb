@@ -1,8 +1,8 @@
 <% content_for :title, "Market" %>
 <div class="container">
   <div class="d-flex no-wrap" style="font-size:1.1rem;">
-    <marquee scrollamount="2" onmouseover="this.stop()" onmouseout="this.start()">
-    <strong style="color: blue;">Trending Search 24Hr:  </strong>
+    <marquee scrollamount="2">
+    <i class="fa-brands fa-hotjar" style="color:red;"></i><strong style="color: blue;"> Trending Search: </strong>
       <% @top_search["coins"].each do |coin| %>
         <%= image_tag coin["item"]["large"], size:"30" %>
         <%= coin["item"]["name"] %>:
@@ -12,7 +12,7 @@
   </div>
 
   <div class="table-responsive">
-    <table class="table align-middle text-end table-hover mb-0">
+    <table id="priceTable" class="table align-middle text-end table-hover mb-0">
       <thead class="align-middle">
         <tr>
           <th class="text-center">Rank</th>
