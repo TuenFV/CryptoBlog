@@ -46,7 +46,7 @@ en:
         units:
           unit: ""
           thousand: k
-          million: m
+          million: M
           billion: B
           trillion: T
           quadrillion: Q
