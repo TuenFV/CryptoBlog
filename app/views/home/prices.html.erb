@@ -12,22 +12,23 @@
   </div>
 
   <div class="table-responsive">
-    <table id="priceTable" class="table align-middle text-end table-hover mb-0">
+    <table id="pricesTable" class="table align-middle text-end table-hover mb-0">
       <thead class="align-middle">
         <tr>
           <th class="text-center">Rank</th>
           <th></th>
           <th class="text-start">Name</th>
           <th>Price</th>
-          <th>1Hr</th>
-          <th>24Hr</th>
+          <th class="text-center">1H</th>
+          <th class="text-center">24H</th>
           <th style="min-width: 80px;">Mkt Cap</th>
           <th style="min-width: 80px;">Supply</th>
-          <th style="min-width: 80px;">Volume 24Hr</th>
+          <th style="min-width: 80px;">24H Volume</th>
         </tr>
       </thead>
-      <% @prices.each do |token| %>
         <tbody>
+        <% @prices.each do |token| %>
+        <tr>
           <td class="text-center"><%= token["market_cap_rank"] %></td>
           <td class="px-0"><%= image_tag token["image"], size:"30" %></td>
           <td class="text-start">
@@ -56,8 +57,14 @@
             <i style="font-size: 0.8rem; color: darkgray;"><%= number_to_human(token["total_supply"]) %></i>
           </td>
           <td>$<%= number_to_human(token["total_volume"]) %></td>
+        </tr>
+        <% end %>
       </tbody>
-      <% end %>
     </table>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        let table = new DataTable('#pricesTable')
+      });
+    </script>
   </div>
 </div>
