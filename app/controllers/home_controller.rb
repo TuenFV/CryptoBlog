@@ -14,7 +14,7 @@ class HomeController < ApplicationController
   # Grab Prices
   def prices
 
-  url_price = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false&price_change_percentage=1h%2C24h"
+  url_price = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=false&price_change_percentage=1h%2C24h"
   uri_price = URI(url_price)
   respone_price = Net::HTTP.get(uri_price)
   #@respone_price['Authorization'] = '67595558-d5e2-4224-a42a-fb880e9458ca'
