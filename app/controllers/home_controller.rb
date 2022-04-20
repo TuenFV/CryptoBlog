@@ -28,6 +28,5 @@ class HomeController < ApplicationController
   uri_btc = URI("https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd")
   respone_btc = Net::HTTP.get(uri_btc)
   @price_btc = JSON.parse(respone_btc)
-
   end
 end
