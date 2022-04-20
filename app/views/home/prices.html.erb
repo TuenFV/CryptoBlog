@@ -1,12 +1,12 @@
 <% content_for :title, "Market" %>
 <div class="container">
-  <div class="d-flex no-wrap" style="font-size:1.1rem;">
+  <div class="d-flex no-wrap" style="font-size:0.9rem;">
+    <strong><i class="fa-brands fa-hotjar" style="color:red;"></i>&nbsp;&nbsp;</strong>  Trending:&nbsp;&nbsp;
     <marquee scrollamount="2">
-    <i class="fa-brands fa-hotjar" style="color:red;"></i><strong style="color: blue;"> Trending Search: </strong>
       <% @top_search["coins"].each do |coin| %>
-        <%= image_tag coin["item"]["large"], size:"30" %>
+        <%= image_tag coin["item"]["large"], size:"25" %>
         <%= coin["item"]["name"] %>:
-        $<%= coin["item"]["price_btc"].to_d*@prices[0]["current_price"] < 0.001 ? (coin["item"]["price_btc"].to_d*@prices[0]["current_price"]).round(6) : (coin["item"]["price_btc"].to_d*@prices[0]["current_price"]).round(2) %>&nbsp;&nbsp;
+        $<%= coin["item"]["price_btc"].to_d*@price_btc["bitcoin"]["usd"] < 0.001 ? (coin["item"]["price_btc"].to_d*@price_btc["bitcoin"]["usd"]).round(6) : (coin["item"]["price_btc"].to_d*@price_btc["bitcoin"]["usd"]).round(2) %>&nbsp;
       <% end %>
     </marquee>
   </div>
@@ -19,11 +19,11 @@
           <th></th>
           <th class="text-start">Name</th>
           <th>Price</th>
-          <th>MarketCap</th>
-          <th>Circ. Supply</th>
-          <th>Total Supply</th>
-          <th style="min-width: 90px;">Volume (24Hr)</th>
-          <th>Change (24Hr)</th>
+          <th>1Hr</th>
+          <th>24Hr</th>
+          <th style="min-width: 80px;">Mkt Cap</th>
+          <th style="min-width: 80px;">Supply</th>
+          <th style="min-width: 80px;">Volume 24Hr</th>
         </tr>
       </thead>
       <% @prices.each do |token| %>
@@ -35,18 +35,27 @@
               <i style="font-size: 0.8rem;"><%= token["symbol"].upcase %></i>
           </td>
           <td>$<%= token["current_price"] < 0.001 ? number_with_delimiter(token["current_price"].to_d.round(8)) : number_with_delimiter(token["current_price"].round(2)) %></td>
-          <td>$<%= number_to_human(token["market_cap"]) %></td>
-          <td><%= number_to_human(token["circulating_supply"]) %></td>
-          <td><%= number_to_human(token["total_supply"]) %></td>
-          <td>$<%= number_to_human(token["total_volume"]) %></td>
-
-          <% if token["price_change_percentage_24h_in_currency"] < 0 %>
-            <td style="color: red;">
-          <% else %>
+          <% token["price_change_percentage_1h_in_currency"] ||= 0 %>
+          <% if token["price_change_percentage_1h_in_currency"] >= 0 %>
             <td style="color: green;">
+          <% else %>
+            <td style="color: red;">
+          <% end %>
+            <%= token["price_change_percentage_1h_in_currency"].round(2) %>%
+          </td>
+          <% if token["price_change_percentage_24h_in_currency"] >= 0 %>
+            <td style="color: green;">
+          <% else %>
+            <td style="color: red;">
           <% end %>
             <%= token["price_change_percentage_24h_in_currency"].round(2) %>%
           </td>
+          <td>$<%= number_to_human(token["market_cap"]) %></td>
+          <td>
+            <%= number_to_human(token["circulating_supply"]) %><br/>
+            <i style="font-size: 0.8rem; color: darkgray;"><%= number_to_human(token["total_supply"]) %></i>
+          </td>
+          <td>$<%= number_to_human(token["total_volume"]) %></td>
       </tbody>
       <% end %>
     </table>
