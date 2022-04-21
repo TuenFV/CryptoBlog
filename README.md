@@ -1,24 +1,14 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is personal Blog in cryptocurrency:
 
-Things you may want to cover:
+What do the website application can do?
 
-* Ruby version
+1. Manage investment pools and vesting dates correspondly.
+   - Sum-up: Total Fund and Profit/Loss of Investment.
+   - Remind vesting time a day before via registered email.
+2. Read the lastest news in cryptocurrency space.
+3. Check live price and statistic of top 250 coins/tokens by marketcap.
+4. Check trending search tokens in 24 hours.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Website: https://my-invests.herokuapp.com
