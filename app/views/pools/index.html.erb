@@ -7,18 +7,27 @@
     <div class="divider-custom-line"></div>
   </div>
 
+  <div class="mb-3">
+    <%= search_form_for @search do |f| %>
+      <%#= f.label :project_or_platform_cont, "Project/Platform:" %>
+      <%= f.search_field :project_or_platform_cont, placeholder:"Project or Platform" %>
+
+      <%= f.submit %>
+    <% end %>
+  </div>
+
   <div class="table-responsive">
     <table class="table table-hover table-bordered">
       <thead class="table-dark text-center">
         <tr class="align-middle">
-          <th>Project</th>
-          <th>Round</th>
-          <th>Platform</th>
-          <th>Amount</th>
-          <th>Price</th>
+          <th><%= sort_link(@search, :project,'Project') %></th>
+          <th><%= sort_link(@search, :round,'Round') %></th>
+          <th><%= sort_link(@search, :platform,'Platform') %></th>
+          <th><%= sort_link(@search, :amount,'Amount') %></th>
+          <th><%= sort_link(@search, :price,'Price') %></th>
           <th>Profit</th>
           <th>Vesting Schedule</th>
-          <th>Launch Date</th>
+          <th><%= sort_link(@search, :launchdate,'Launch Date') %></th>
         </tr>
       </thead>
       <tbody>
